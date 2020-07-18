@@ -1,0 +1,146 @@
+2020-04-18 21:17:20
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.121-b13 mixed mode):
+
+"DestroyJavaVM" #13 prio=5 os_prio=0 tid=0x0000000001a1d800 nid=0xc1c waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Thread-1" #12 prio=5 os_prio=0 tid=0x0000000028391000 nid=0x47f0 waiting for monitor entry [0x000000002923f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at concurrency.UtilReader.read(DeadLockExample1.java:24)
+	- waiting to lock <0x0000000716380a88> (a concurrency.UtilReader)
+	at concurrency.UtilWriter.search(DeadLockExample1.java:34)
+	- locked <0x0000000716382630> (a concurrency.UtilWriter)
+	at concurrency.ThreadB1.run(DeadLockExample1.java:81)
+
+   Locked ownable synchronizers:
+	- None
+
+"Thread-0" #11 prio=5 os_prio=0 tid=0x000000002839b800 nid=0x3024 waiting for monitor entry [0x000000002913f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at concurrency.UtilWriter.write(DeadLockExample1.java:40)
+	- waiting to lock <0x0000000716382630> (a concurrency.UtilWriter)
+	at concurrency.UtilReader.update(DeadLockExample1.java:18)
+	- locked <0x0000000716380a88> (a concurrency.UtilReader)
+	at concurrency.ThreadA1.run(DeadLockExample1.java:61)
+
+   Locked ownable synchronizers:
+	- None
+
+"Service Thread" #10 daemon prio=9 os_prio=0 tid=0x0000000028314800 nid=0x472c runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C1 CompilerThread3" #9 daemon prio=9 os_prio=2 tid=0x000000002827c000 nid=0x7ac waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread2" #8 daemon prio=9 os_prio=2 tid=0x0000000028278800 nid=0x4550 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread1" #7 daemon prio=9 os_prio=2 tid=0x000000002826e000 nid=0x32dc waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread0" #6 daemon prio=9 os_prio=2 tid=0x000000002826a800 nid=0x2900 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x0000000028269000 nid=0x1468 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x0000000028268000 nid=0x2198 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x0000000028260800 nid=0x2644 in Object.wait() [0x000000002873e000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x0000000716308ec8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+	- locked <0x0000000716308ec8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x00000000033e7000 nid=0x3248 in Object.wait() [0x000000002823f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x0000000716306b68> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+	- locked <0x0000000716306b68> (a java.lang.ref.Reference$Lock)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+   Locked ownable synchronizers:
+	- None
+
+"VM Thread" os_prio=2 tid=0x0000000026379800 nid=0x3234 runnable 
+
+"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x0000000003307000 nid=0x36b4 runnable 
+
+"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x0000000003309000 nid=0x1c3c runnable 
+
+"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x000000000330a800 nid=0x3134 runnable 
+
+"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x000000000330c000 nid=0x4964 runnable 
+
+"GC task thread#4 (ParallelGC)" os_prio=0 tid=0x000000000330e000 nid=0x688 runnable 
+
+"GC task thread#5 (ParallelGC)" os_prio=0 tid=0x000000000330f800 nid=0x1cd0 runnable 
+
+"GC task thread#6 (ParallelGC)" os_prio=0 tid=0x0000000003313800 nid=0x2418 runnable 
+
+"GC task thread#7 (ParallelGC)" os_prio=0 tid=0x0000000003314800 nid=0x1890 runnable 
+
+"VM Periodic Task Thread" os_prio=2 tid=0x00000000282be800 nid=0xf60 waiting on condition 
+
+JNI global references: 5
+
+
+Found one Java-level deadlock:
+=============================
+"Thread-1":
+  waiting to lock monitor 0x00000000033eb048 (object 0x0000000716380a88, a concurrency.UtilReader),
+  which is held by "Thread-0"
+"Thread-0":
+  waiting to lock monitor 0x00000000033ed8d8 (object 0x0000000716382630, a concurrency.UtilWriter),
+  which is held by "Thread-1"
+
+Java stack information for the threads listed above:
+===================================================
+"Thread-1":
+	at concurrency.UtilReader.read(DeadLockExample1.java:24)
+	- waiting to lock <0x0000000716380a88> (a concurrency.UtilReader)
+	at concurrency.UtilWriter.search(DeadLockExample1.java:34)
+	- locked <0x0000000716382630> (a concurrency.UtilWriter)
+	at concurrency.ThreadB1.run(DeadLockExample1.java:81)
+"Thread-0":
+	at concurrency.UtilWriter.write(DeadLockExample1.java:40)
+	- waiting to lock <0x0000000716382630> (a concurrency.UtilWriter)
+	at concurrency.UtilReader.update(DeadLockExample1.java:18)
+	- locked <0x0000000716380a88> (a concurrency.UtilReader)
+	at concurrency.ThreadA1.run(DeadLockExample1.java:61)
+
+Found 1 deadlock.
+
